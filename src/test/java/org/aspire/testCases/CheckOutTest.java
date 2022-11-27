@@ -2,7 +2,6 @@ package org.aspire.testCases;
 
 import org.aspire.pagObjects.*;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class CheckOutTest extends BaseTest{

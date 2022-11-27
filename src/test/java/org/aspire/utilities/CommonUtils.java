@@ -23,6 +23,6 @@ public class CommonUtils {
 
     public static int getRandomNumber(){
         Random random=new Random();
-        return random.nextInt((9 - 1) + 1) + 1;
+        return random.nextInt((4 - 1) + 1) + 1;
     }
 }
