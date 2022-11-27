@@ -35,15 +35,14 @@ public class SearchResultPage {
     }
 
     public void selectSortByOption(String sortOption) throws Exception {
-//        BrowserUtils.selectOptionFromSelectList(sortByOptionDropdown,sortOption);
         BrowserUtils.clickElement(webDriver, sortByOptionDropdown);
         BrowserUtils.clickElement(webDriver, webDriver.findElement(By.xpath("//li[@role='option']/following::a[contains(text(),'" + sortOption + "')]")));
         BrowserUtils.isUiExpectedCondition(webDriver, ExpectedConditions.visibilityOf(resultText),2);
-//        BrowserUtils.poll(2000);
     }
 
 
 
+    // function to get items per page
     public  Map<String,Double> perPageItem(){
         Map<String,Double> productMapPerPage=new LinkedHashMap<>();
         String productId;
@@ -52,12 +51,11 @@ public class SearchResultPage {
 
         for (int i = 0; i < elements.size(); i++) {
             productId = BrowserUtils.getAttributeValue(webDriver, elements.get(i), "data-asin");
-
             List<WebElement> priceEle = webDriver.findElements(By.xpath("//div[@data-asin='" + productId + "']//span[@class='a-price']/span[@class='a-offscreen']"));
+
             if (priceEle != null && !priceEle.isEmpty()) {
                 price = priceEle.get(0).getAttribute("innerHTML");
                 // System.out.println(productId + " price is " + price);
-
                 String priceWithoutCurrencySymbol = CommonUtils.removeSpecialCharFromString(price, "$");
                 Double priceInDoubleType = CommonUtils.convertStringToDecimal(priceWithoutCurrencySymbol);
                 productMapPerPage.put(productId, priceInDoubleType);
@@ -69,35 +67,16 @@ public class SearchResultPage {
         Map<String, Double> productMap = new LinkedHashMap<String, Double>();
         int totalPages = 1;
         int page = 1;
-        String productId;
-        String price;
 
         List<WebElement> totalPagesEle = webDriver.findElements(By.xpath("//span[@data-component-type='s-search-results']//span[@class='s-pagination-strip']//a[contains(text(),'Next')]/preceding-sibling::*[1]"));
 
         if (totalPagesEle != null && !totalPagesEle.isEmpty()) {
             totalPages = Integer.valueOf(totalPagesEle.get(0).getAttribute("innerHTML"));
-            System.out.println("Total pages: " + totalPages);
         }
-
+        System.out.println("Total pages: " + totalPages);
         while (page <= totalPages) {
-            List<WebElement> elements = webDriver.findElements(By.xpath("//div[@data-component-type='s-search-result']"));
-            //System.out.println("Number of elements:" + elements.size());
-
-//            for (int i = 0; i < elements.size(); i++) {
-//                productId = BrowserUtils.getAttributeValue(webDriver, elements.get(i), "data-asin");
-//
-//                List<WebElement> priceEle = webDriver.findElements(By.xpath("//div[@data-asin='" + productId + "']//span[@class='a-price']/span[@class='a-offscreen']"));
-//                if (priceEle != null && !priceEle.isEmpty()) {
-//                    price = priceEle.get(0).getAttribute("innerHTML");
-//                  //  System.out.println(productId + " price is " + price);
-//
-//                    String priceWithoutCurrencySymbol = CommonUtils.removeSpecialCharFromString(price, "$");
-//                    Double priceInDoubleType = CommonUtils.convertStringToDecimal(priceWithoutCurrencySymbol);
-//                    productMap.put(productId, priceInDoubleType);
-//                }
-//            }
             productMap=perPageItem();
-
+            System.out.println("Page "+page+" has " + productMap.size() +" products");
             if (page==totalPages) {
                 break;
             } else {
@@ -105,8 +84,6 @@ public class SearchResultPage {
             }
             page++;
         }
-        System.out.println("Products:" + productMap.size());
-
         return productMap;
     }
 
@@ -128,7 +105,7 @@ public class SearchResultPage {
         Map<String, Double> productsFromWeb = perPageItem();
 
 //        Map<String,Double>productsFromWeb=perPageItem();//getProductsByRec(1);
-        Map<String, Double> sortedProducts;//=new LinkedHashMap<>();
+        Map<String, Double> sortedProducts;
         sortedProducts = prodBeforeSort.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
@@ -167,6 +144,7 @@ public class SearchResultPage {
     }
 
 
+    // method is not in use, trying to find products by using recursion
     public  Map<String, Double> getProductsByRec(int page) throws IOException, InterruptedException {
         Map<String,Double> productMap=new LinkedHashMap<>();
         int totalPages=1;
@@ -186,7 +164,6 @@ public class SearchResultPage {
             BrowserUtils.clickElement(webDriver, nextPage);
             return getProductsByRec(page+1);
         }
-
     }
 
 }

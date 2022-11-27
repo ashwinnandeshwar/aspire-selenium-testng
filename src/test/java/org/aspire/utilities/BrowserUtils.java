@@ -146,7 +146,7 @@ public class BrowserUtils {
 	public static String getAttributeValue(WebDriver driver,WebElement element,String attributeName) {
 		String strText = null;
 		try {
-			new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(element));
+			new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(element));
 			strText = element.getAttribute(attributeName).trim();
 		//	System.out.println("value with in the Element: " + "<" + strText + ">");
 			return strText;

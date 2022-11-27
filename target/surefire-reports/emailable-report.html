@@ -8,17 +8,19 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">test</th></tr>
-<tr><td><a href="#t0">Search test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">265,821</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Checkout test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">265,822</th><th colspan="2"></th></tr>
+<tr><th colspan="8">Amazon tests</th></tr>
+<tr><td><a href="#t0">Search test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">321,038</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Checkout test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">64,228</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">385,266</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">test</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Search test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">org.aspire.testCases.SearchProductTest</td><td><a href="#m0">sortProducts</a></td><td rowspan="1">1669565544868</td><td rowspan="1">260575</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4" class="invisible"/></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Amazon tests</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Search test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">org.aspire.testCases.SearchProductTest</td><td><a href="#m0">sortProductByPrice</a></td><td rowspan="1">1669587739536</td><td rowspan="1">272658</td></tr><tr><th colspan="4">Search test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">org.aspire.testCases.SearchProductTest</td><td><a href="#m1">searchProduct</a></td><td rowspan="1">1669587696574</td><td rowspan="1">39381</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Checkout test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">org.aspire.testCases.CheckOutTest</td><td><a href="#m2">checkOut</a></td><td rowspan="1">1669588016155</td><td rowspan="1">60341</td></tr></tbody>
 </table>
-<h2>Search test</h2><h3 id="m0">org.aspire.testCases.SearchProductTest#sortProducts</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Products are not sorted expected [true] but found [false]
-	at org.aspire.testCases.SearchProductTest.sortProducts(SearchProductTest.java:47)
+<h2>Search test</h2><h3 id="m0">org.aspire.testCases.SearchProductTest#sortProductByPrice</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Products are not sorted expected [true] but found [false]
+	at org.aspire.testCases.SearchProductTest.sortProductByPrice(SearchProductTest.java:47)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
 ... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Checkout test</h2></body>
+<h3 id="m1">org.aspire.testCases.SearchProductTest#searchProduct</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Checkout test</h2><h3 id="m2">org.aspire.testCases.CheckOutTest#checkOut</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
 </html>
