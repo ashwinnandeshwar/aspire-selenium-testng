@@ -1,0 +1,1 @@
+package org.aspire.constants;public enum EnvironmentType {    LOCAL,    REMOTE,}

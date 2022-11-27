@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 266.324 s <<< FAILURE! - in TestSuite
+org.aspire.testCases.SearchProductTest.sortProducts  Time elapsed: 260.582 s  <<< FAILURE!
+java.lang.AssertionError: Products are not sorted expected [true] but found [false]
+	at org.aspire.testCases.SearchProductTest.sortProducts(SearchProductTest.java:47)
+
