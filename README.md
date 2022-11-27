@@ -19,6 +19,7 @@ Steps to execute:
 Above maven command will trigger the automation script.Once the execution finish, report will generate on path mentioned in point 7.</br>
 
 Project Structure:
+
 ![img_1.png](img_1.png)
 
 Report:
@@ -27,6 +28,3 @@ Report:
 Note: 
 1. Old Report will be replaced by new.</br>
 2. Test case 2(sorted by price) will fail as sorting filter is not working on amazon website.</br> 
-
-
-
