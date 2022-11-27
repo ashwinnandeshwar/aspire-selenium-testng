@@ -7,8 +7,8 @@
 2. Solution is implemented using java 11,selenium, WebDriverManager,tesng, maven using Intellj IDE on window System.
 3. By default scripts will run on chrome browser. Browser can be parameterized in testng.xml file. Supported browsers: chrome, edge, firefox and safari
 4. BaseTest.java contains setup() to initialise browser and teardown to close the browser
-5. SearchProductTest.java implemented Test case 1(searchProductTest) and Test case 2(sortProductTest)
-6. CheckoutTest.Java implemented Test case 3(checkoutTest).
+5. SearchProductTest.java implemented Test case 1(searchProduct) and Test case 2(sortProductByPrice)
+6. CheckoutTest.Java implemented Test case 3(checkout).
 7.  Report is available on path ".\target\surefire-reports\emailable-report.html"
 
 Steps to execute:

@@ -17,7 +17,7 @@ public class CheckOutTest extends BaseTest{
 
     //Test Case 3
     @Test (priority = 1)
-    public void checkOutTest() throws Exception {
+    public void checkOut() throws Exception {
         homePage=new HomePage(webDriver);
         leftFilterSectionPage=new LeftFilterSectionPage(webDriver);
         searchResultPage=new SearchResultPage(webDriver);

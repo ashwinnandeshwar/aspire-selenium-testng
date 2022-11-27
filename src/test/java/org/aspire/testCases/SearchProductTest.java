@@ -34,7 +34,7 @@ public class SearchProductTest extends BaseTest{
 
     //Test Case 2
     @Test (priority = 3)
-    public void sortProducts() throws Exception {
+    public void sortProductByPrice() throws Exception {
         homePage=new HomePage(webDriver);
         leftFilterSectionPage=new LeftFilterSectionPage(webDriver);
         searchResultPage=new SearchResultPage(webDriver);
