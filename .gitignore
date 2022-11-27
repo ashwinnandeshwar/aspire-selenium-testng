@@ -1,0 +1,7 @@
+#Ignore .idea files
+/.idea
+
+.classpath
+.project
+.settings/
+target/**
